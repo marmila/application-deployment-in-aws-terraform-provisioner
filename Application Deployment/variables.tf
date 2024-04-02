@@ -9,6 +9,7 @@ variable "ami_id" {
 
 variable "key_name" {
     description = "Value for Key name"
+    default = "id_rsa.ppk"
 }
 
 variable "sg-name" {
@@ -23,4 +24,3 @@ variable "vpc-cidr" {
 variable "subnet_az" {
     description = "Value for Availabilty zone of subnet"
 }
-

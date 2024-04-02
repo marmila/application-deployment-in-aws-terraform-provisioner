@@ -1,6 +1,6 @@
 resource "aws_instance" "server" {
-  ami                    = var.ami_id
-  instance_type          = var.instance_type
+  ami                    = "ami-019c1e0f36fa08c62"
+  instance_type          = "t3.micro"
   key_name      = aws_key_pair.example.key_name
   vpc_security_group_ids = [aws_security_group.webSg.id]
   subnet_id              = aws_subnet.sub1.id
@@ -8,7 +8,7 @@ resource "aws_instance" "server" {
   connection {
     type        = "ssh"
     user        = "ubuntu"  # Replace with the appropriate username for your EC2 instance
-    private_key = file("/c/Users/Mathesh M/.ssh/id_rsa")  # Replace with the path to your private key
+    private_key = file("./id_rsa_pem")  # Replace with the path to your private key
     host        = self.public_ip
    }
 
